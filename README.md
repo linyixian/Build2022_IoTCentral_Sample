@@ -7,3 +7,5 @@ M5ATOM Liteを Azure IoT Centoralデバイスとして利用するためのサ�
 解説は次のページにて行っています。
 
 https://qiita.com/linyixian/items/2d855b9c51ee59bc236a
+
+© 2022 Yoshinori Hayashi All rights reserved.
