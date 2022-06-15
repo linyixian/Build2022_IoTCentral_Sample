@@ -29,7 +29,7 @@ namespace Build2022_IoTCentral_Sample
 
         public static void Main()
         {
-            //Wifiê⁄ë±
+            //Wifi connection
             if (!ConnectWifi())
             {
                 Debug.WriteLine("Wifi Connection failed...");
@@ -42,7 +42,7 @@ namespace Build2022_IoTCentral_Sample
 
             Thread.Sleep(5000);
 
-            //DPSê›íË
+            //DPS setting
             var provisioning = ProvisioningDeviceClient.Create(dspAddress, idscope, registrationid, saskey);
 
             var myDevice = provisioning.Register(null, new CancellationTokenSource(30000).Token);
@@ -55,7 +55,7 @@ namespace Build2022_IoTCentral_Sample
 
             Debug.WriteLine($"Device successfully assigned:");
 
-            //IoTCentoralÇ…ê⁄ë±
+            //IoTCentoral connect
             var device = new DeviceClient(myDevice.AssignedHub, registrationid, saskey, MqttQoSLevel.AtMostOnce);
 
             var res = device.Open();
@@ -75,7 +75,7 @@ namespace Build2022_IoTCentral_Sample
             rgb.Image.SetPixel(0, 0, System.Drawing.Color.FromArgb(0, 0, 128, 128));
             rgb.Update();
 
-            //I2Cê›íË
+            //I2C setting
             Configuration.SetPinFunction(26, DeviceFunction.I2C1_DATA);
             Configuration.SetPinFunction(32, DeviceFunction.I2C1_CLOCK);
 
